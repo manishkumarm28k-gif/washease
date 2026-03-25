@@ -1,14 +1,21 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
+
+db = SQLAlchemy()
+login_manager = LoginManager()
 
 def create_app():
     app = Flask(__name__)
 
-    # basic config
     app.config['SECRET_KEY'] = 'secret123'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///washease.db'
 
-    # simple test route (IMPORTANT)
-    @app.route("/")
-    def home():
-        return "WashEase Full App Running 🚀"
+    db.init_app(app)
+    login_manager.init_app(app)
+
+    # Import routes (IMPORTANT)
+    from app.routes.main import main
+    app.register_blueprint(main)
 
     return app
