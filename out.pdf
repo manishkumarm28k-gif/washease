@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - WashEase</title>
+    <!-- Modern Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+</head>
+<body>
+    <div class="layout-wrapper">
+        
+
+        <div class="main-wrapper" style="margin-left: 0;">
+            
+                <nav class="top-bar" style="background: white; border-bottom: 2px solid #f1f5f9; padding: 0 4rem; height: 80px; width: 100%;">
+                    <!-- Logo Block -->
+                    <a href="/home" class="nav-logo d-flex align-items-center" style="font-size: 1.8rem; font-weight: 900; letter-spacing: -0.5px; text-decoration: none; color: #1e293b;">
+                        <i class="fas fa-tshirt mr-2" style="color: #f97316;"></i><span style="color: #2563eb;">WASH</span>EASE<sup style="font-size: 0.6rem; color: #64748b;">TM</sup>
+                    </a>
+                    
+                    <style>
+                        .nav-dropdown { position: relative; }
+                        .nav-dropdown-menu {
+                            position: absolute; top: 100%; left: 0; min-width: 220px;
+                            background: white; border: 1px solid #e2e8f0;
+                            border-radius: 8px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+                            opacity: 0; visibility: hidden; transform: translateY(10px);
+                            transition: all 0.2s ease; z-index: 1000; padding: 0.5rem 0;
+                        }
+                        .nav-dropdown:hover .nav-dropdown-menu {
+                            opacity: 1; visibility: visible; transform: translateY(0);
+                        }
+                        .nav-dropdown-item {
+                            display: block; padding: 0.75rem 1.5rem; color: #0f172a;
+                            text-decoration: none; font-weight: 600; font-size: 0.9rem;
+                            transition: background 0.2s;
+                        }
+                        .nav-dropdown-item:hover { background: #f8fafc; color: #2563eb; text-decoration: none; }
+                        .nav-item-disabled {
+                            opacity: 0.6; cursor: not-allowed;
+                        }
+                        .nav-item-disabled:hover { background: transparent; color: #0f172a; text-decoration: none; }
+                        .store-badge {
+                            font-size: 0.65rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+                            margin-left: 0.5rem; font-weight: 800; float: right; margin-top: 2px;
+                        }
+                    </style>
+                    <!-- Center Navigation Links -->
+                    <div class="nav-links d-none d-md-flex align-items-center justify-content-center flex-grow-1" style="gap: 2rem; font-weight: 700; font-size: 0.95rem;">
+                        <!-- Our Services Dropdown -->
+                        <div class="nav-dropdown" style="padding: 1rem 0; cursor: pointer;">
+                            <a href="/services" style="text-decoration: none; color: #0f172a; transition: color 0.2s;" onmouseover="this.style.color='#f97316'" onmouseout="this.style.color='#0f172a'">Our Services <i class="fas fa-caret-down ml-1 small" style="color: #f97316;"></i></a>
+                            <div class="nav-dropdown-menu" style="min-width: 260px;">
+                                <a href="/services" class="nav-dropdown-item">Laundry Service</a>
+                                <a href="/services" class="nav-dropdown-item">Dry Clean Service</a>
+                                <a href="/services" class="nav-dropdown-item">Shoe Cleaning Service</a>
+                                <a href="/services" class="nav-dropdown-item">Jacket Cleaning Service</a>
+                                <a href="/services" class="nav-dropdown-item">Bag Cleaning Service</a>
+                                <a href="/services" class="nav-dropdown-item">Sofa Cleaning Service</a>
+                                <a href="/services" class="nav-dropdown-item">Carpet Cleaning Service</a>
+                                <a href="/services" class="nav-dropdown-item">Steam Ironing Service</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Our Stores Dropdown -->
+                        <div class="nav-dropdown" style="padding: 1rem 0; cursor: pointer;">
+                            <span style="color: #2563eb;">Our Stores <i class="fas fa-caret-down ml-1 small"></i></span>
+                            <div class="nav-dropdown-menu">
+                                <a href="/shops" class="nav-dropdown-item">
+                                    Greater Noida <span class="store-badge" style="background: rgba(16,185,129,0.1); color: #10b981;">ACTIVE</span>
+                                </a>
+                                <a href="#" class="nav-dropdown-item nav-item-disabled">
+                                    Ranchi <span class="store-badge" style="background: #f1f5f9; color: #64748b;">SOON</span>
+                                </a>
+                                <a href="#" class="nav-dropdown-item nav-item-disabled">
+                                    Jamshedpur <span class="store-badge" style="background: #f1f5f9; color: #64748b;">SOON</span>
+                                </a>
+                                <a href="#" class="nav-dropdown-item nav-item-disabled">
+                                    Deoghar <span class="store-badge" style="background: #f1f5f9; color: #64748b;">SOON</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <a href="/services" style="text-decoration: none; color: #0f172a;">Pricing</a>
+                        <a href="#" style="text-decoration: none; color: #0f172a;">Consultancy</a>
+                        <a href="#" style="text-decoration: none; color: #0f172a;">Get Franchise</a>
+                    </div>
+                    
+                    <!-- Right Actions -->
+                    <div class="nav-actions d-flex align-items-center">
+                        <a href="/login" class="mr-3" style="text-decoration: none; color: #0f172a; font-weight: 700;">Sign In</a>
+                        <a href="/register" class="btn" style="background: #f97316; color: white; padding: 0.5rem 1.5rem; font-weight: 700; border-radius: 4px;">Book Now</a>
+                    </div>
+                </nav>
+            
+
+            <main class="page-content">
+                <div class="flash-messages">
+                    
+                        
+                            
+                                <div class="alert alert-info">
+                                    Please log in to access this page.
+                                </div>
+                            
+                        
+                    
+                </div>
+                
+                
+<div class="d-flex justify-content-center align-items-center" style="min-height: 75vh;">
+    <div class="card shadow p-4" style="width: 100%; max-width: 450px;">
+        <h2 class="text-center mb-4">Welcome Back</h2>
+        <form method="POST" action="">
+            <input id="csrf_token" name="csrf_token" type="hidden" value="IjA5M2YxODMyYTNjZGM1MzYyOWFkMWRjZGU0MzlmNTRhN2IwNDk5NDQi.ab_UgQ.V8kMOJnKeZFwtLgWrj2wtxSOMNA">
+            
+            <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                
+                    <input class="form-control" id="email" name="email" placeholder="Enter your email" required type="text" value="">
+                
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                
+                    <input class="form-control" id="password" name="password" placeholder="Enter your password" required type="password" value="">
+                
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" id="remember" name="remember" type="checkbox" value="y">
+                <label class="form-check-label" for="remember">Remember Me</label>
+            </div>
+            
+            <div class="form-group">
+                <input class="btn btn-primary btn-block" id="submit" name="submit" type="submit" value="Login">
+            </div>
+        </form>
+        <div class="auth-footer">
+            <small>Need an account? <a href="/register">Sign Up Now</a></small>
+        </div>
+    </div>
+</div>
+
+            </main>
+
+            </main>
+
+            <footer class="premium-footer">
+                <div class="container text-center">
+                    <div class="mb-4">
+                        <a href="#" class="text-muted mx-2 fs-5 transition-colors hover-primary"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-muted mx-2 fs-5 transition-colors hover-primary"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-muted mx-2 fs-5 transition-colors hover-primary"><i class="fab fa-facebook"></i></a>
+                    </div>
+                    <h5 class="font-weight-bold" style="color: var(--primary);"><i class="fas fa-water"></i> WashEase</h5>
+                    <p class="text-muted small mt-2 mb-0">Premium Fabric Care & AI Laundry Platform</p>
+                    <div class="mt-4 pt-4 border-top">
+                        <p class="text-muted small mb-0">&copy; 2026 WashEase AI. Crafted with precision.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth page loader dismissal
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loader = document.getElementById('page-loader');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    setTimeout(() => loader.style.display = 'none', 500);
+                }
+            }, 250); 
+        });
+    </script>
+    
+</body>
+</html>
